@@ -5,11 +5,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather API</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <!-- jQuery-->
+
 </head>
 
 <body>
+    <!-- Title & Time -->
+    <header class="header-background">
+        <h1 class="title"> <strong>Weather Dashboard </strong></h1>
+        <h2 class="time">
+            Current Time &amp; Date: <br />
+            <span id="time-display"></span>
+        </h2>
+    </header>
 
+    <main>
+        <!-- Search -->
+        <sections class="Search">
+            <h1 class="box-title"><strong>Search for a city:</strong></h1>
+            <input type="text" placeholder="What City You Are Looking For?" class="search-box">
+            <br>
+            <button class="searchBtn"><strong>Search</strong></button>
+        </sections>
+        <section>
+            <!-- Result -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                <div class="card">
+                    <h3 class="card-header primary">
+                        Service 1
+                    </h3>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at,
+                            blanditiis rem
+                            quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae,
+                            inventore
+                            neque,
+                            quas obcaecati laborum?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                <div class="card">
+                    <h3 class="card-header">
+                        Service 2
+                    </h3>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at,
+                            blanditiis rem
+                            quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae,
+                            inventore
+                            neque,
+                            quas obcaecati laborum?
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                <div class="card">
+                    <h3 class="card-header">
+                        Service 3
+                    </h3>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at,
+                            blanditiis rem
+                            quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae,
+                            inventore
+                            neque,
+                            quas obcaecati laborum?
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="./Assets/JS/script.js"></script>
 </body>
 
 </html>
