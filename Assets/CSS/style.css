@@ -2,6 +2,8 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     margin: 10px;
+    font-weight: 600;
+   
 }
 .header-background {
     background-color: rgb(33, 63, 130);
@@ -50,3 +52,8 @@ background-color:  rgb(127, 146, 186);
 .time {
     text-align: center;
 }
+
+#city-current {
+    display: flex;
+}
+
