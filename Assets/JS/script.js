@@ -45,6 +45,7 @@ var displayWeather = function (cityName) {
             for (let i = 4; i < forecast.length; i = i + 8) {
                 console.log(forecast[i]);
                 // I need to fetch the forecast
+                // how to fitch every city in one cars
                 var dayOne = document.querySelector('#day-one')
                 var dayTwo = document.querySelector('#day-two')
                 var dayThree = document.querySelector('#day-three')
