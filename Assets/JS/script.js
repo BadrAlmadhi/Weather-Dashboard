@@ -35,10 +35,19 @@ var displayWeather = function (cityName) {
             // ? if it dose not exist will throw an error
             console.log(currentData);
             var cityName = document.querySelector('#city');
-            cityName.textContent = currentData?.name
+            cityName.textContent = currentData?.name;
+            var humidity = document.querySelector("#humidity");
+            humidity.textContent = currentData?.main.humidity;
+            // var date = document.querySelector('#date');
+            //date.textContent = currentData
+            var temp = document.querySelector('#temp');
+            temp.textContent = currentData.main?.temp;
 
         })
     var urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${key}&units=imperial`;
+
+    var x = 1
+
     fetch(urlForecast)
         .then(function (response) {
             return response.json();
@@ -48,14 +57,17 @@ var displayWeather = function (cityName) {
             var forecast = forecastData.list
             for (let i = 4; i < forecast.length; i = i + 8) {
                 console.log(forecast[i]);
-                x = 1
+
                 // I need to fetch the forecast
                 // how to fitch every city in one cars
                 // var cardOne = document.forecastData
                 var card = document.querySelector('#day-' + x);
-                card.textContent = forecast[i].main.temp
+                card.textContent = forecast[i].main?.temp;
+                var wind = document.querySelector('#wind-' + x);
+                wind.textContent = forecast[i].wind.speed;
+                var hum = document.querySelector('#hum-' + x);
+                hum.textContent = forecast[i].main.humidity
                 x++;
-                console.log(x);
             }
         })
 
