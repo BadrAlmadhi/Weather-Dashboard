@@ -9,15 +9,58 @@
 // THEN I am  again presented with current and future conditions for that city
 
 
-// connect jQuery
-var time = $('#time-display');
+// This is all ES5
+
+// this is the key
+var key = '76bed644bbb6bf7b66cb2167b944672f';
+var city = 'Salt Lake City';
 
 
-function displayTimer() {
-var currentTimer = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
-time.text(currentTimer);
+
+// current time and date
+
+var date = moment().format('dddd, MMMM Do YYYY');
+var dateTime = moment().format('YYYY-MM-DD HH:MM:SS')
+
+
+// when search for a city we get the city by name and we get the forecast 
+var search = document.querySelector('#search-city');
+var displayWeather = function (cityName) {
+    var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=imperial`;
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (currentData) {
+            console.log(currentData);
+        })
+    var urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${key}&units=imperial`;
+    fetch(urlForecast)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (forecastData) {
+            console.log(forecastData);
+            var forecast = forecastData.list
+            for (let i = 4; i < forecast.length; i = i + 8) {
+                console.log(forecast[i]);
+                // I need to fetch the forecast
+                var dayOne = document.querySelector('#day-one')
+                var dayTwo = document.querySelector('#day-two')
+                var dayThree = document.querySelector('#day-three')
+                var dayFour = document.querySelector('#day-four')
+                var dayFive = document.querySelector('#day-five')
+            }
+        })
+
 }
 
-displayTimer();
-setInterval(displayTimer, 1000);
+search.addEventListener('click', function (event) {
+    event.preventDefault(); // prevent page refresh
+    var cityName = document.querySelector('#city-name');
+    displayWeather(cityName.value)
+
+});
+
+
 
