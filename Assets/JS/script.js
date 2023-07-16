@@ -32,7 +32,11 @@ var displayWeather = function (cityName) {
             return response.json();
         })
         .then(function (currentData) {
+            // ? if it dose not exist will throw an error
             console.log(currentData);
+            var cityName = document.querySelector('#city');
+            cityName.textContent = currentData?.name
+
         })
     var urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${key}&units=imperial`;
     fetch(urlForecast)
@@ -40,17 +44,18 @@ var displayWeather = function (cityName) {
             return response.json();
         })
         .then(function (forecastData) {
-            console.log(forecastData);
+            // console.log(forecastData);
             var forecast = forecastData.list
             for (let i = 4; i < forecast.length; i = i + 8) {
                 console.log(forecast[i]);
+                x = 1
                 // I need to fetch the forecast
                 // how to fitch every city in one cars
-                var dayOne = document.querySelector('#day-one')
-                var dayTwo = document.querySelector('#day-two')
-                var dayThree = document.querySelector('#day-three')
-                var dayFour = document.querySelector('#day-four')
-                var dayFive = document.querySelector('#day-five')
+                // var cardOne = document.forecastData
+                var card = document.querySelector('#day-' + x);
+                card.textContent = forecast[i].main.temp
+                x++;
+                console.log(x);
             }
         })
 
