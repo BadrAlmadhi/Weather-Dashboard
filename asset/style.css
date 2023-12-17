@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#title {
+    text-align: center;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);    color: aliceblue;
+    padding: 15px;
+}
+
+
+.search-btn{
+    padding: 5px;
+    width: 300px;
+}
