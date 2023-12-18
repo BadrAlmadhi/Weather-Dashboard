@@ -14,35 +14,100 @@
     <link rel="stylesheet" href="asset/style.css" />
   </head>
   <body>
-    <header>
-      <h1 id="title">Weather Dashboard</h1>
+    <!--title-->
+    <header id="title">
+      <h1>Weather Dashboard</h1>
+      <p>Search for a city to get the weather forecast</p>
     </header>
-    <main class="frame-work" style="padding: 10px marg">
+
+    <main class>
       <!--City Search-->
+      <section class="row">
+        <div class="search">
+          <h1 class="search-title">Search for a City:</h1>
+          <form class="vstack gap-3">
+            <input type="text" id="input" placeholder="City Name" />
+            <button class="search-btn">Search</button>
+            <hr />
+          </form>
+        </div>
+        <!--card-->
+        <div class="card">
+          <h2 class="city-name">Atlanta</h2>
+          <h3 class="temp">Temp</h3>
+          <h4 class="wind">wind</h4>
+        </div>
+      </section>
+
+      <!--searched cities result-->
       <div class="search">
-        <h1 class="search-title">Search for a City:</h1>
-        <input
-          type="text"
-          id="input"
-          placeholder="City Name"
-          style="padding: 5px; margin-top: 10px; width: 300px"
-        />
+        <ul class="btns vstack gap-3">
+          <button class="search-btn">Slat Lake</button>
+          <button class="search-btn">Atlanta</button>
+          <button class="search-btn">LA</button>
+          <button class="search-btn">Sna Fransico</button>
+        </ul>
       </div>
 
-      <button class="search-btn">Search</button>
+      <div class="five-cards">
+        <h2 class="title">5-Day Forecast</h2>
+        <section class="all-cards">
+          <!--cards-->
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
 
-      <hr style="margin: 10px; width: 300px" />
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
 
-      <!--city name list-->
-      <div class="search-result">
-        <ul class="cities"></ul>
-      </div>
-      <!--city info-->
-      <div class="city-info-forcast">
-        <h1 class="city-name">1</h1>
-        <h2 class="temp">2</h2>
-        <h2 class="wind">3</h2>
-        <h2 class="humidity">4</h2>
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>
@@ -58,7 +123,7 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"
   ></script>
-  
+
   <!--JS-->
   <script src="./asset/script.js"></script>
 </html>

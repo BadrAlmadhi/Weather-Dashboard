@@ -2,10 +2,7 @@
 var userInput = document.getElementById("input");
 var searchBtn = document.querySelector("search-btn");
 var citiesNames = document.querySelector("cities"); //ul add list in it
-var cityNameForecast = document.querySelector("city-name");
-var temp = document.querySelector("temp");
-var wind = document.querySelector("wind");
-var humidity = document.querySelector("humidity");
+var forecastContainer = document.querySelector("forecast-container");
 
 
 // API Key
@@ -23,14 +20,3 @@ fetch(queryURl).then(function (response) {
   }
 });
 
-
-async function cityNameHandler (event) {
-    event.preventDefault();
-
-    var city = userInput.value.trim();
-    if (city) {
-        getCityData(city);
-        userInput.texContent = '';
-
-    } 
-}
