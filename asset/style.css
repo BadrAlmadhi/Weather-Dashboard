@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
@@ -9,8 +9,22 @@
     padding: 15px;
 }
 
-
-.search-btn{
+.search-btn {
     padding: 5px;
     width: 300px;
+    margin: 10px;
+    background-color: rgb(20, 123, 158);
+    border-style: none;
+    color: aliceblue;
+    border-radius: 5px;
 }
+
+#input {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.search-title {
+    margin: 10px;
+}
+
