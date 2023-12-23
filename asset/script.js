@@ -1,44 +1,39 @@
 // declare a variables from HTML
-var searchBtn = document.querySelector(".search-btn");
-var cityInput = document.getElementById("city-input");
+var searchBtn = document.querySelector(".search-btn"); // search Button
+var cityInput = document.getElementById("city-input"); // user input
 
-// var cityName = cityInput.value.trim();
-// API Key
-var apiKey = `544df32abd3d80b6cd05d312a48dfefd`;
+var apiKey = `6206f5efcffcfd21d75777ccfcbb6a1f`;
 
-const getWeatherDetails = (cityName, lat, lon) => {
-  debugger
-  const API_URL_Forecast = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  debugger
-  fetch(API_URL_Forecast)
-    .then((res) => res.json())
-    .then((data) => {
-      debugger
-      console.log(data);
-    })
-    .catch(() => {
-      alert("Error occurred while fetching for weather forecast");
-    });
-};
+//starter function
+async function getCity(event) {
+  event.preventDefault();
+  try {
+    var cityName = cityInput.value.trim();
+    var cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
-const getCityCoordinate = (event) => {
-  event.preventDefault(); // prevent default to lose info
-  debugger
-  const cityName = cityInput.value.trim(); // git red of extra spaces
-  if (!cityName) return; // return if cityName is empty
-  const apiURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+    var result = await fetch(cityURL);
+    var data = await result.json();
+    if (!data.name) {
+      return alert(`No coordinate found for ${cityName}`);
+    }
+    console.log(data);
+    const { lat, lon } = data.coord;
+    getLatAndLon(lat, lon);
+  } catch (error) {
+    console.log(`Error fetching data:`, error);
+  }
+}
 
-  // This fetch gets the city coordinate (latitude, longitude, and name) from API JSON data
-  fetch(apiURL)
-    .then((res) => res.json())
-    .then((data) => {
-      if (!data.length) return alert(`No coordinate found for ${cityName}`);
-      const { name, lat, lon } = data[0]; // in json data all info needed is under data[0];
-      getWeatherDetails(name, lat, lon);
-    })
-    .catch(() => {
-      alert("Error occurred while fetching for coordinate");
-    });
-};
+async function getLatAndLon(lat, lon) {
+  try {
+    var cityUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-searchBtn.addEventListener("click", getCityCoordinate);
+    var result = await fetch(cityUrl);
+    var data = await result.json();
+    console.log(data);
+  } catch (error) {
+    console.log(`Error getting latitude and longitude`, error);
+  }
+}
+
+searchBtn.addEventListener("click", getCity);
