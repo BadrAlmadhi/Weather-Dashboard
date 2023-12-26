@@ -17,99 +17,87 @@
     <!--title-->
     <header id="title">
       <h1>Weather Dashboard</h1>
-      <p>Search for a city to get the weather forecast</p>
     </header>
-
-    <main class>
-      <!--City Search-->
-      <section class="row">
-        <div class="search">
-          <h1 class="search-title">Search for a City:</h1>
-          <form class="vstack gap-3">
-            <input type="text" id="input" placeholder="City Name" />
-            <button class="search-btn">Search</button>
-            <hr />
-          </form>
-        </div>
-        <!--card-->
-        <div class="card">
-          <h2 class="city-name">Atlanta</h2>
-          <h3 class="temp">Temp</h3>
-          <h4 class="wind">wind</h4>
-        </div>
-      </section>
-
-      <!--searched cities result-->
-      <div class="search">
-        <ul class="btns vstack gap-3">
-          <button class="search-btn">Slat Lake</button>
-          <button class="search-btn">Atlanta</button>
-          <button class="search-btn">LA</button>
-          <button class="search-btn">Sna Fransico</button>
-        </ul>
+    <div class="container">
+      <!-- search box -->
+      <div class="weather-input">
+        <h3>Search for a City:</h3>
+        <input
+          id="city-input"
+          type="text"
+          placeholder="E.g., New York, Los Angeles"
+        />
+        <button class="search-btn">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn">Use Current Location</button>
       </div>
-
-      <div class="five-cards">
-        <h2 class="title">5-Day Forecast</h2>
-        <section class="all-cards">
-          <!--cards-->
-          <div class="card" style="width: 10rem">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <h2>_______ ( ______ )</h2>
+            <h4>Temp: __°C</h4>
+            <h4>Wind: __ M/S</h4>
+            <h4>Humidity: __%</h4>
           </div>
-
-          <div class="card" style="width: 10rem">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <div class="card" style="width: 10rem">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <div class="card" style="width: 10rem">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <div class="card" style="width: 10rem">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </section>
+          
+        </div>
+        <div class="days-forcast">
+          <h2>5-Day Forecast</h2>
+          <ul class="weather-cards">
+            <li class="card">
+              <h3>( _____ )</h3>
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+              />
+              <h4>Temp: __°C</h4>
+              <h4>Wind: __ M/S</h4>
+              <h4>Humidity: __%</h4>
+            </li>
+            <li class="card">
+              <h3>( _____ )</h3>
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+              />
+              <h4>Temp: __°C</h4>
+              <h4>Wind: __ M/S</h4>
+              <h4>Humidity: __%</h4>
+            </li>
+            <li class="card">
+              <h3>( _____ )</h3>
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+              />
+              <h4>Temp: __°C</h4>
+              <h4>Wind: __ M/S</h4>
+              <h4>Humidity: __%</h4>
+            </li>
+            <li class="card">
+              <h3>( _____ )</h3>
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+              />
+              <h4>Temp: __°C</h4>
+              <h4>Wind: __ M/S</h4>
+              <h4>Humidity: __%</h4>
+            </li>
+            <li class="card">
+              <h3>( _____ )</h3>
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+              />
+              <h4>Temp: __°C</h4>
+              <h4>Wind: __ M/S</h4>
+              <h4>Humidity: __%</h4>
+            </li>
+          </ul>
+        </div>
       </div>
-    </main>
+    </div>
   </body>
 
   <!--bootstrap-->
